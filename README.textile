@@ -1,3 +1,48 @@
+h1. 介绍
+
+这是经典的vim on rails开发工具
+
+h2. 安装
+
+请确保您已经安装了git-core,vim-7.2,ruby,rvm
+
+<pre>
+sudo apt-get install exuberant-ctags ncurses-term
+
+git clone git://github.com/saberma/vimfiles.git ~/.vim
+
+#初始化插件
+cd ~/.vim
+git submodule init
+git submodule update
+ln -s ~/.vim/vimrc ~/.vimrc
+
+cd ~/.vim/bundle/Command-T/ruby/command-t
+#一定要先切换回ruby1.8.7，否则vim会报错:Vim: Caught deadly signal SEGV 
+rvm system
+ruby extconf.rb
+make
+rvm default
+</pre>
+
+h2. 注意
+
+最新版本的rails vimfiles已经不再使用fuzzy_finder实现快速打开文件的功能，而改用CommandT
+其快捷键也由原来的ctrl + t 改为 leader + t，leader键即\键
+
+h2. 参考资源
+
+"使用说明参考这里(旧)":http://saberma.github.com/2009/10/10/vim.html
+
+h1. 技术互助
+
+有需要帮助或交流的地方，可以:
+
+# 加我的gtalk直接沟通: mahb45#gmail.com
+# 发送email: mahb45#gmail.com
+
+以下为详细说明:
+
 h1. Vim
 
 It is recommended that you use gVim in either Windows or Linux and MacVim for
