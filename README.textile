@@ -30,6 +30,8 @@ h2. 注意
 最新版本的rails vimfiles已经不再使用fuzzy_finder实现快速打开文件的功能，而改用CommandT
 其快捷键也由原来的ctrl + t 改为 leader + t，leader键即\键
 
+外部新增文件后，CommandT列表中看不到时，需要手动输入:CommandTFlush，刷新缓存
+
 h2. 参考资源
 
 "使用说明参考这里(旧)":http://saberma.github.com/2009/10/10/vim.html
