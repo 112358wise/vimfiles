@@ -265,8 +265,8 @@ if has("gui_running")
 
     if has("gui_gnome")
         set term=gnome-256color
-        colorscheme ir_dark
-        set guifont=Inconsolata\ Medium\ 12
+        colorscheme railscasts
+        set guifont=Monospace\ Bold\ 12
     endif
 
     if has("gui_mac") || has("gui_macvim")
@@ -290,6 +290,14 @@ if has("gui_running")
 else
     "dont load csapprox if there is no gui support - silences an annoying warning
     let g:CSApprox_loaded = 1
+
+    "set railscasts colorscheme when running vim in gnome terminal
+    if $COLORTERM == 'gnome-terminal'
+        set term=gnome-256color
+        colorscheme railscasts
+    else
+        colorscheme default
+    endif
 endif
 
 " PeepOpen uses <Leader>p as well so you will need to redefine it so something
@@ -390,6 +398,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+"key mapping for saving file
+nmap <C-s> :w<CR>
+
 "key mapping for tab navigation
 nmap <Tab> gt
 nmap <S-Tab> gT
@@ -422,3 +433,4 @@ let g:CommandTMaxFiles=20000
 
 "Align.vim支持中文
 let g:Align_xstrlen = 3
+let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
