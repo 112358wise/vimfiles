@@ -7,7 +7,7 @@ h2. 安装
 请确保您已经安装了git-core,vim-7.2,ruby,rvm
 
 <pre>
-sudo apt-get install exuberant-ctags ncurses-term
+sudo apt-get install exuberant-ctags ncurses-term vim-nox
 
 git clone git://github.com/saberma/vimfiles.git ~/.vim
 
