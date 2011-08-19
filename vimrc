@@ -428,8 +428,8 @@ map <c-n> :sp<CR>
 set noswapfile
 
 "定义Command-T搜索的最大文件数及目录层数，修正:vim的Command-T突然只能搜索到少量的文件
-let g:CommandTMaxDepth=30
-let g:CommandTMaxFiles=20000
+let g:CommandTMaxDepth=50
+let g:CommandTMaxFiles=50000
 
 "Align.vim支持中文
 let g:Align_xstrlen = 3
