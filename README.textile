@@ -18,7 +18,7 @@ git submodule update
 ln -s ~/.vim/vimrc ~/.vimrc
 
 cd ~/.vim/bundle/Command-T/ruby/command-t
-#一定要先切换回ruby1.8.7，否则vim会报错:Vim: Caught deadly signal SEGV 
+#一定要先切换回ruby1.8.7，否则vim会报错:Vim: Caught deadly signal SEGV
 rvm system
 ruby extconf.rb
 make
@@ -32,18 +32,22 @@ h2. 注意
 
 外部新增文件后，CommandT列表中看不到时，需要手动输入:CommandTFlush，刷新缓存
 
+h2. 升级
+
+2011.08.19已升级至最新版本，手动升级方法如下:
+
+<pre>
+cd ~/.vim
+git remote add akitaonrails git://github.com/akitaonrails/vimfiles.git
+git pull akitaonrails master
+git submodule foreach git pull
+</pre>
+
 h2. 参考资源
 
-"使用说明参考这里(旧)":http://saberma.github.com/2009/10/10/vim.html
+"使用说明参考这里(旧)":http://saberma.me/vim/2009/10/10/vim.html
 
-h1. 技术互助
-
-有需要帮助或交流的地方，可以:
-
-# 加我的gtalk直接沟通: mahb45#gmail.com
-# 发送email: mahb45#gmail.com
-
-以下为详细说明:
+以下为akitaonrails原版详细说明:
 
 h1. Vim
 
@@ -87,10 +91,10 @@ h1. Bundled Plugins
 h1. Usage
 
 Troubleshoot: Because of the large amount of submodules, if you ever have any
-trouble after pulling from the repository, it will be easier to just back up 
+trouble after pulling from the repository, it will be easier to just back up
 your old .vim folder and just git clone a new version.
 
-Clone this repo into your home directory either as .vim (linux/mac) or 
+Clone this repo into your home directory either as .vim (linux/mac) or
 vimfiles (Windows). Such as:
 
 <pre><code>
@@ -121,7 +125,7 @@ source ~/vimfiles/vimrc
 This way you can override the default configuration by adding your own inside
 this file.
 
-You should also create a new <tt>.gvimrc</tt> file in your home directory. You can do 
+You should also create a new <tt>.gvimrc</tt> file in your home directory. You can do
 it on Linux/Mac like this:
 
 <pre><code>
@@ -173,8 +177,8 @@ look for Luis Lavena's latest Ruby Installer (http://rubyforge.org/projects/ruby
 
 h1. IMPORTANT: Command-T
 
-The latest version replaces the old Fuzzy Finder with a new one called 
-"Command-T" form wincent.com. I've replaced the old "Command-T" key 
+The latest version replaces the old Fuzzy Finder with a new one called
+"Command-T" form wincent.com. I've replaced the old "Command-T" key
 binding that used to open new tabs and assigned it to this new plugin
 so it behaves the same as Textmate.
 
@@ -188,7 +192,7 @@ ruby extconf.rb
 make
 </code></pre>
 
-This means that you need to have your Ruby source files and GCC also 
+This means that you need to have your Ruby source files and GCC also
 installed. A binary for Windows is already bundled so it should just
 work. I've also included a binary compiled for Ruby Enterprise Edition,
 but if you are using other Ruby distros, you will need to recompile.

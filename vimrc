@@ -270,7 +270,7 @@ endif
 " nmap <silent> <Leader>q <Plug>PeepOpen
 
 silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
-"nnoremap <silent> <C-f> :call FindInNERDTree()<CR> 
+"nnoremap <silent> <C-f> :call FindInNERDTree()<CR>
 
 "make <c-l> clear the highlight as well as redraw
 nnoremap <C-L> :nohls<CR><C-L>
@@ -383,7 +383,7 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+""autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 "key mapping for window navigation
 map <C-h> <C-w>h
@@ -404,28 +404,7 @@ nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
-let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'} 
-
-"ctrl + A 保存
-imap <c-a> <esc>:wa<CR>
-map <c-a> :wa<CR>
-"Ctrl + C 退出窗口
-imap <c-c> <esc>:q<CR>
-map <c-c> :q<CR>
-"Ctrl + S 打开vs新窗口
-map <c-s> :vs<CR>
-"Ctrl + N 打开sp新窗口
-map <c-n> :sp<CR>
-
-"不生成备份文件
-set noswapfile
-
-"定义Command-T搜索的最大文件数及目录层数，修正:vim的Command-T突然只能搜索到少量的文件
-let g:CommandTMaxDepth=50
-let g:CommandTMaxFiles=50000
-
-"Align.vim支持中文
-let g:Align_xstrlen = 3
+let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
 let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
 
 "Enabling Zencoding
@@ -445,3 +424,24 @@ let g:user_zen_settings = {
   \  },
  \}
 
+"ctrl + A 保存
+imap <c-a> <esc>:wa<CR>
+map <c-a> :wa<CR>
+"Ctrl + C 退出窗口
+imap <c-c> <esc>:q<CR>
+map <c-c> :q<CR>
+"Ctrl + S 打开vs新窗口
+map <c-s> :vs<CR>
+"Ctrl + N 打开sp新窗口
+map <c-n> :sp<CR>
+let g:yankring_replace_n_nkey = '<m-n>' "修正yankring插件<C-N>热键冲突
+
+"不生成备份文件
+set noswapfile
+
+"定义Command-T搜索的最大文件数及目录层数，修正:vim的Command-T突然只能搜索到少量的文件
+let g:CommandTMaxDepth=50
+let g:CommandTMaxFiles=50000
+
+"Align.vim支持中文
+let g:Align_xstrlen = 3
